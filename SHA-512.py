@@ -1,7 +1,3 @@
-# Amro Adil MohamedAhmed Salman 164073
-# Ayman Saeed Mohamed Saeed 164006
-# Mohammed SalahEldeen Elsiddig Eltahir 164091
-
 ################################################# AES128 code #################################################
 # Aes prerequisites
 import time
@@ -245,15 +241,14 @@ def SHA2_512(plain_text):
         hash = f(current_block, hash) # outputs an integer
     return hash
 
-file=open("C:\\testsha.txt","r")
-plain_text=''.join(file.readlines())
+plain_text=input("Enter the plain text you want to hash\n").strip()
 str=plain_text
 plain_text=plain_text.encode()
 length=get_length(plain_text)
 plain_text=pad_text(plain_text)
 plain_text+=length
 hash=SHA2_512(plain_text)
-print(f"The hash of the plaintext in c:\\testsha.txt is (using sha2 512):\n{hex(hash)[2:]}\n")
+print(f"The hash of the plaintext is (using sha2 512):\n{hex(hash)[2:]}\n")
 answer=input("Do you want to encrypt the hash using AES128? (y = Yes, n = No)\n")
 if answer[0].lower()=="y":
     key = int(input("Enter the key (in hex):\n").replace(" ", ""), 16)

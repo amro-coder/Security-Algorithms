@@ -97,17 +97,15 @@ def AES(plain_text,key):
         state = add_round_key(state,key)
     print_state(state)
     return
-for i in convert_from_int_to_2Dmatrix(256):
-    print(*i)
-# print("Enter -1 to exit\n")
-# while True:
-#     plain_text = int(input("Enter plain text (in hex): ").replace(" ", ""), 16)
-#     if plain_text==-1:
-#         print("You have exited the code")
-#         break
-#     key = int(input("Enter key (in hex): ").replace(" ", ""), 16)
-#     AES(plain_text,key)
-#     print()
+print("Enter -1 to exit\n")
+while True:
+    plain_text = int(input("Enter plain text (in hex): ").replace(" ", ""), 16)
+    if plain_text==-1:
+        print("You have exited the code")
+        break
+    key = int(input("Enter key (in hex): ").replace(" ", ""), 16)
+    AES(plain_text,key)
+    print()
 # Example:
 # plain_text= 54 77 6F20 4F6E65 20 4E69 6E65 20 54 77 6F
 # key= 54 68 61 74 73 20 6D 79 20 4B 75 6E 67 20 46 75
